@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apparel</title>
+    <title>APParel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,33 @@
   </head>
 
   <body>
+
+    <header>
+      <nav>
+        <h1>APParel</h1>
+
+        <% if @current_user.present?  %>
+          Welcome, <%= @current_user.first_name %>
+          |
+          <%= link_to 'Logout', login_path, method: 'delete' %>
+        <% else %>
+          <%= link_to 'Login', login_path %>
+          |
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+
+
+
+      </nav>
+      <hr>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <hr>
+
+    </footer>
+
   </body>
 </html>

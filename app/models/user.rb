@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # these checks before any create or update
 
   # Email can't be empty, and must be unique
-  validates :email, presence: true, uniqueness: true
+  # validates :email, presence: true, uniqueness: true
 
-  validates :name, length: { minimum: 2 }
+  # validates :name, length: { minimum: 2 }
 end
