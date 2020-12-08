@@ -1,0 +1,14 @@
+<h2>
+Garments: <%= @garment.title %>
+</h2>
+
+<% if @garment.user_id == @current_user.id %>
+  <%= link_to 'Edit Garment', edit_garment_path(@garment.id) %>
+<% end %>
+
+  <p>
+    <strong>Created by:</strong>
+    <%= @garment.user.name %>
+  </p>
+
+<%= image_tag @garment.image %>

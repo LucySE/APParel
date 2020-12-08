@@ -46,7 +46,7 @@ p1 = Photo.create!(
   garment_id: g1.id,
 )
 
-puts "The first photo belongs to the following garment #{Garment.first.photo.pluck(:image)}"
+puts "The first photo belongs to the following garment #{Garment.first.photos.pluck(:image)}"
 # User.create!("firname:  "Example User",
 #              email: "example@railstutorial.org",
 #              password:              "foobar",

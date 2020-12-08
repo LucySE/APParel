@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'session/home'
   # like get '/' => 'pages#home'
   root to: 'pages#home'
 
@@ -12,6 +10,8 @@ Rails.application.routes.draw do
 
   # Create all 7 CRUD routes for our User model
   resources :users
+  resources :garments
+  resources :photos
 
 #     users GET    /users(.:format)          users#index
 #           POST   /users(.:format)          users#create
