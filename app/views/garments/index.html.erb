@@ -1,2 +1,9 @@
 <h1>Garments#index</h1>
 <p>Find me in app/views/garments/index.html.erb</p>
+<ul>
+<% @garments.each do |garment| %>
+  <li>
+    <%= link_to garment.title, garment_path(garment.id) %>
+  </li>
+<% end %>
+</ul>

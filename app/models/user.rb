@@ -7,9 +7,13 @@ class User < ApplicationRecord
 
   # Model validations: ActiveRecord will perform
   # these checks before any create or update
+  after_validation :geocode
+
+  geocoded_by :address
 
   # Email can't be empty, and must be unique
   # validates :email, presence: true, uniqueness: true
 
   # validates :name, length: { minimum: 2 }
+
 end

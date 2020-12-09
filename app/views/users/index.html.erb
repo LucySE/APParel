@@ -1,2 +1,38 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlcR7d2KTjQdJzye85VYGh8twgRLuC8hA&callback=initMap&libraries=&v=weekly" defer></script>
+
+<style>
+  #map {
+    width: 50vw;
+    height: 50vw;
+  }
+</style>
+
+<script>
+
+// const firstUser = { lat: <%= @users.last.latitude  %>, lng: <%= @users.last.longitude %> };
+
+const users = <%== @users.to_json %>;
+
+function initMap() {
+  // const myLatLng = { lat: -25.363, lng: 131.044 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+    center: { lat: users[users.length-1].latitude, lng: users[users.length-1].longitude }
+  });
+
+  for(let i = 0; i < users.length; i++ ){
+    const user = users[i];
+    new google.maps.Marker({
+      position: { lat: user.latitude, lng: user.longitude },
+      map,
+      title: user.title,
+    });
+  } // for
+
+}
+</script>
+
+<h1>
+  Users Near Me! (whatever that means)
+</h1>
+<div id="map"></div>

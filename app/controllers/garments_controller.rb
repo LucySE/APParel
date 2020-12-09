@@ -33,11 +33,13 @@ class GarmentsController < ApplicationController
 
    end  #create
   #
-  # def index
-  # end
+   def index
+     @garments = Garment.all
+   end
   #
-  # def show
-  # end
+   def show
+     @garment = Garment.find params[:id]
+   end
   #
   # def edit
   # end
@@ -45,11 +47,11 @@ class GarmentsController < ApplicationController
   # def update
   # end
   #
-def destroy
-  Garment.destroy params[:id]
-  redirect_to garments_path
-#enabled
-   end
+  def destroy
+    Garment.destroy params[:id]
+    redirect_to garments_path
+
+  end
 
    #private
 

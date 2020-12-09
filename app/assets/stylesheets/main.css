@@ -1,8 +1,14 @@
 
-form {
-  width: 50%;
+body {
+  background-color: #efe5d5;
+  font-family: Helvetica;
+  color: black;
 }
 
-.field_with_errors {
-  background-color: orange;
+a:visited {
+  color: blue;
+}
+
+img {
+  max-width: 500px;
 }

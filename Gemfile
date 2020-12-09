@@ -55,3 +55,5 @@ end
 gem 'pry-rails' # pry for rails console
 
 require 'faker'
+
+gem "geocoder", "~> 1.6"

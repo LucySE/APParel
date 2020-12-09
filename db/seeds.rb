@@ -12,8 +12,8 @@
    password:  'chicken',
   first_name: 'Lucy',
   last_name: 'Wirth',
-  address: 'Address',
-  clothing_size: 'Clothing Size'
+  address: '1 York St, Sydney, NSW, 2001',
+  clothing_size: '12'
 )
 
 puts "Done! Created #{ User.count } users."
@@ -34,6 +34,38 @@ g2 = Garment.create!(
   user_id:          u1.id,
   description:     'polka dot bikini'
 )
+g3 = Garment.create!(
+  title:   'Business Suit',
+  garment_type:     'Suit',
+  size:             '14',
+  points:           '20',
+  user_id:          u1.id,
+  description:     'I got two promotions in this suit'
+)
+g4 = Garment.create!(
+  title:   'Shorts',
+  garment_type:     'shorts',
+  size:             '12',
+  points:           '8',
+  user_id:          u1.id,
+  description:     'Wore in the Carribean'
+)
+g5 = Garment.create!(
+  title:   'Wedding dress',
+  garment_type:     'dress',
+  size:             '12',
+  points:           '10',
+  user_id:          u1.id,
+  description:     'broken vows dress'
+)
+g6 = Garment.create!(
+  title:   'Bikini',
+  garment_type:     'swimsuit',
+  size:             '12',
+  points:           '8',
+  user_id:          u1.id,
+  description:     'polka dot bikini'
+)
 
 puts "The first garment belongs to #{Garment.first.user.first_name}"
 
@@ -46,9 +78,29 @@ p1 = Photo.create!(
   garment_id: g1.id,
 )
 p2 = Photo.create!(
-  image:  "https://unsplash.com/photos/1SHZkX2fbkY",
+  image:  "https://images.unsplash.com/photo-1440735562367-c8a2c50cf459?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
   caption: "polka polka polka",
   garment_id: g2.id,
+)
+p3 = Photo.create!(
+  image:  "https://images.unsplash.com/photo-1502124103086-37d8f3d39954?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+  caption: "May it bring you better luck than me",
+  garment_id: g3.id,
+)
+p4 = Photo.create!(
+  image:  "https://images.unsplash.com/flagged/photo-1575873280796-66a2288d8abd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8c2hvcnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  caption: "polka polka polka",
+  garment_id: g4.id,
+)
+p5 = Photo.create!(
+  image:  "https://images.unsplash.com/photo-1589849802886-163a178fdf46?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  caption: "May it bring you better luck than me",
+  garment_id: g5.id,
+)
+p6 = Photo.create!(
+  image:  "https://unsplash.com/photos/1SHZkX2fbkY",
+  caption: "polka polka polka",
+  garment_id: g6.id,
 )
 
 puts "The first photo belongs to the following garment #{Garment.first.photos.pluck(:image)}"
