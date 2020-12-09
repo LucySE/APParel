@@ -1,13 +1,11 @@
+<%= form_with model: @photo, local: true, html: { multipart: true} do |photo| %>
 
-<%= form_with model: @photo, local: true do |p| %>
-
-  <%= p.label :caption %>
-
-  <br>
-
-  <%= p.text :image %>
-  <br>
-
-  <%= f.submit %>
+<%= photo.label :image %>
+<%= photo.text_field :caption %>
+<br>
+<%= photo.label :image %>
+<%= photo.file_field :image %>
+<br>
+<%= photo.submit %>
 
 <% end %>

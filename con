@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: do9y9tnbr
+  api_key: '419211221844415'
+  api_secret: acG1iAhPDX4DaG94F7VPelv1AN4
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: do9y9tnbr
+  api_key: '419211221844415'
+  api_secret: acG1iAhPDX4DaG94F7VPelv1AN4
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: do9y9tnbr
+  api_key: '419211221844415'
+  api_secret: acG1iAhPDX4DaG94F7VPelv1AN4
+  enhance_image_tag: true
+  static_file_support: false
