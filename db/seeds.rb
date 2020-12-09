@@ -41,9 +41,14 @@ puts "The first user has the following garments #{User.first.garments.pluck(:tit
 
 Photo.destroy_all
 p1 = Photo.create!(
-  image:  "https://unsplash.com/photos/p-38_f-WZkw",
+  image:  "https://images.unsplash.com/photo-1589849802886-163a178fdf46?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
   caption: "May it bring you better luck than me",
   garment_id: g1.id,
+)
+p2 = Photo.create!(
+  image:  "https://unsplash.com/photos/1SHZkX2fbkY",
+  caption: "polka polka polka",
+  garment_id: g2.id,
 )
 
 puts "The first photo belongs to the following garment #{Garment.first.photos.pluck(:image)}"

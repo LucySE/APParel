@@ -1,14 +1,18 @@
 <h2>
-  Photo: <%= @photo.title %>
+  Photo: <%= @photo.caption %>
 </h2>
 
-<% if @photo.user_id == @current_user.id %>
+<% if @photo.garment.user_id == @current_user.id %>
   <%= link_to 'Edit Photo', edit_photo_path(@photo.id) %>
 <% end %>
 
-  <p>
-    <strong>Created by:</strong>
-    <%= @photo.user.name %>
-  </p>
+
+
+<%= image_tag @photo.image %>
+<h2>
+  Photo: <%= @photo.caption%>
+</h2>
+
+
 
 <%= image_tag @photo.image %>
