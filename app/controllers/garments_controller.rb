@@ -10,6 +10,7 @@ class GarmentsController < ApplicationController
       @garment = Garment.create(
         title:  params[:garment][:title],
         garment_type:  params[:garment][:garment_type],
+        points:  params[:garment][:points],
        size:  params[:garment][:size],
        user_id: @current_user.id,
        description: params[:garment][:description]

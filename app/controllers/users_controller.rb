@@ -6,12 +6,13 @@ class UsersController < ApplicationController
   def create
 
     @user = User.create user_params   #params[:user]
-
+    p @user
     # Did the above .create actually save to the DB or not?
     if @user.persisted?
       # log the user in automatically so they don't
       # immediately have to enter the same details again
       # into the login form
+
       session[:user_id] = @user.id
       redirect_to root_path
     else
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
   end
 
 end # class UsersController

@@ -5,7 +5,8 @@ Garments: <%= @garment.title %>
 <% if @garment.user_id == @current_user.id %>
   <%= link_to 'Edit Garment', edit_garment_path(@garment.id) %>
 <% end %>
-
+<p>Points</p>
+<%= @garment.points %>
   <p>
     <strong>Created by:</strong>
     <%= @garment.user.first_name %>

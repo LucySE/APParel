@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :garments
-
+  attribute :points, :integer, default: 20
 
   # Use the bcrypt gem to encrypt passwords when users create accounts,
   # and store only the encrypted version in the 'users' table

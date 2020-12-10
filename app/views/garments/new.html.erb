@@ -1,4 +1,5 @@
 <h1>Add garment</h1>
+
 <%= form_with model: @garment, local: true, html: { multipart: true} do |garment| %>
 
 <%= garment.label :title %>
@@ -12,6 +13,9 @@
 <br>
 <%= garment.label :size %>
 <%= garment.text_field :size %>
+<br>
+<%= garment.label :points %>
+<%= garment.text_field :points %>
 <br>
 <%= garment.cl_image_upload :image %>
 <br><br>
