@@ -5,8 +5,19 @@ Garments: <%= @garment.title %>
 <% if @garment.user_id == @current_user.id %>
   <%= link_to 'Edit Garment', edit_garment_path(@garment.id) %>
 <% end %>
-<p>Points</p>
-<%= @garment.points %>
+<p><strong>Points: </strong><%= @garment.points %></p>
+
+
+
+<% if @current_user.points >= @garment.points %>
+  <%= form_with url:claim_garment_path(@garment.id), local:true do |f| %>
+  <%= f.submit "Claim" %>
+  <% end %>
+<% else %>
+<h1>You do not have enough points... yet, swap more clothes!</h1>
+<% end %>
+
+
   <p>
     <strong>Created by:</strong>
     <%= @garment.user.first_name %>

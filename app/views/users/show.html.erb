@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>APParel User page</title>
+  </head>
+  <body>
+  <h1>Kitty Amount:<%= @current_user.points %></h1>
+  <button onclick=""type="button" name="button">Start shopping</button>
+
+    <h1>Hello <%= @current_user.first_name %>!</h1>
+
+    <br><h1>Did you know?</h1>
+     <p>Australia ranks number two in world for textile disposal by discarding on average around 23 kilos of textiles per head every year. The biggest issues surround mass consumption of  fast, cheap fashion. We have 500 million kilos of textile waste going into landfills every year. The fashion industry is also one of the highest polluting industries, responsible for an estimated 10% of global CO2 emissions.</p>
+  </body>
+</html>

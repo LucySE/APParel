@@ -38,7 +38,7 @@ g3 = Garment.create!(
   title:   'Business Suit',
   garment_type:     'Suit',
   size:             '14',
-  points:           '20',
+  points:           '25',
   user_id:          u1.id,
   description:     'I got two promotions in this suit'
 )

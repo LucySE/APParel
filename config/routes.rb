@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   # Create all 7 CRUD routes for our User model
   resources :users
+
+  post '/garments/:id/claim' => 'garments#claim', as: 'claim_garment'
   resources :garments
   resources :photos
 

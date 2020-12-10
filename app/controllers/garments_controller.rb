@@ -1,5 +1,21 @@
 class GarmentsController < ApplicationController
 
+  before_action :check_if_logged_in
+
+  def claim
+
+    #  1. get the garment by id and the id is in params id.
+    garment = Garment.find params[:id]
+    # 2. take points off the current user and give them to the owner of the garments.
+    garment.user.update points: (garment.user.points + garment.points)
+    @current_user.update points: (@current_user.points - garment.points)
+    # 3. Garments user id needs to transfer to current user id.
+    # 4. Change garment claimed column to true.
+    garment.update user_id: @current_user.id, claimed:true
+
+    # 5. current user will be redirected back to profile page and new outfit will now appear.
+    redirect_to user_path(@current_user.id)
+  end
 
   def new
     @garment = Garment.new  # make a blank Garment object to give to 'form_with' in the template
@@ -40,7 +56,7 @@ class GarmentsController < ApplicationController
    end  #create
   #
    def index
-     @garments = Garment.all
+     @garments = Garment.where claimed:false
    end
   #
    def show
