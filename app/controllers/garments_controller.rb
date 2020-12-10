@@ -9,27 +9,32 @@ class GarmentsController < ApplicationController
 
       @garment = Garment.create(
         title:  params[:garment][:title],
-        garment_type:  params[:garment][garment_type],
-       size:  params[:garment][size],
-       points:  params[:garment][points],
-       user_id: params[:garment][user_id],
-       description: params[:garment][description]
+        garment_type:  params[:garment][:garment_type],
+       size:  params[:garment][:size],
+       user_id: @current_user.id,
+       description: params[:garment][:description]
      )
 
     if @garment.persisted?
-      # log the garment in automatically so they don't
-      # immediately have to enter the same details again
-      # into the login form
-      session[:garment_id] = @garment.id
-      redirect_to root_path
-    else
-      # we won't do this:
-       redirect_to login_path
+      if params[:file].present?
+         # Then call Cloudinary's upload method, passing in the file in params
+         response = Cloudinary::Uploader.upload(params[:file])
+         # save the response id into the appropriate field of our new model
+         # Using the public_id allows us to use Cloudinary's powerful image
+         # transformation methods.
+         # garment.image = response["public_id"] # this is an URL
+         # garment.save
+         Photo.create(
+           image: response["public_id"],
+           garment_id: @garment.id
+         )
+      end #if file present
 
-      # instead, we render the template for the 'new' action
-      # i.e., the blank form, from this 'create' action
+      redirect_to garment_path(@garment.id)
+    else
+
       render :new
-    end
+    end #end of the else if not persisted
 
    end  #create
   #

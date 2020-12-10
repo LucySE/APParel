@@ -14,12 +14,10 @@ class PhotosController < ApplicationController
 
     # Photo.new with strong params creates the object in memory, with
     # the column attributes filled in from the form params... but not saved to DB
-    @photo = Photo.new(photo_params)
-    if @photo.save
-      redirect_to @photo, notice: 'Photo Uplopaded'
-    else
-      @garment = garment.find(params[:garment_id])
-      render :new
+    @photo = Photo.new (photo_params)
+    @garment.user = @current_user# this photo belongs to the logged-in user
+    photo.save  # actually do DB 'INSERT'
+
 
 
     # this photo belongs to the logged-in user
@@ -40,8 +38,8 @@ class PhotosController < ApplicationController
 
     # 3. Use the '<<' to add to a many association
     # @current_user.photos << photo
-end
-end
+
+
 
     redirect_to photo_path( photo.id ) # go to show page
   end
@@ -82,4 +80,4 @@ end
     params.require(:photo).permit(:caption, :image)
   end
 
-  # class PhotosController
+end  # class PhotosController

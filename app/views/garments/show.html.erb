@@ -12,5 +12,5 @@ Garments: <%= @garment.title %>
   </p>
 
 <% @garment.photos.each do |photo|%>
-  <%= image_tag(photo.image, alt:photo.caption) %>
+  <%= cl_image_tag(photo.image, alt:photo.caption) %>
 <% end %>

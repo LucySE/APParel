@@ -1,2 +1,20 @@
-<h1>Garments#new</h1>
-<p>Find me in app/views/garments/new.html.erb</p>
+<h1>Add garment</h1>
+<%= form_with model: @garment, local: true, html: { multipart: true} do |garment| %>
+
+<%= garment.label :title %>
+<%= garment.text_field :title %>
+<br>
+<%= garment.label :garment_type %>
+<%= garment.text_field :garment_type %>
+<br>
+<%= garment.label :description %>
+<%= garment.text_area :description %>
+<br>
+<%= garment.label :size %>
+<%= garment.text_field :size %>
+<br>
+<%= garment.cl_image_upload :image %>
+<br><br>
+<%= garment.submit %>
+
+<% end %>
