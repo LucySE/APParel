@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    #Once user has logged in or signed up they should be taken to their own profile page
   end
 
   def edit

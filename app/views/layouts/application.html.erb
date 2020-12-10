@@ -11,16 +11,6 @@
 
 
 
-
-
-
-
-      <nav>
-
-
-
-
-
         <header>
 
 
@@ -38,8 +28,15 @@
         <% end %>
 
 
+<img src="https://res.cloudinary.com/do9y9tnbr/image/upload/v1607571178/APParel_new_ta0eli.png" class="floatRight" alt="company logo" height="300px">
 
-      </nav>
+                    <h1>
+                Welcome to APParel - the clothes swapping APP</h1>
+
+
+
+            </header>
+
       <hr>
 
 <body>
@@ -50,7 +47,14 @@
 
 </body>
     <footer>
+      <div class="navfoot">
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to '"Buy" Clothes', garments_path %>
+        <%= link_to '"Sell" clothes', new_garment_path %>
 
+
+</div>
 
     </footer>
 
