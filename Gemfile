@@ -57,6 +57,3 @@ gem 'pry-rails' # pry for rails console
 gem 'cloudinary'
 
 gem "geocoder", "~> 1.6"
-
-gem 'carrierwave'
-gem 'mini_magick'
