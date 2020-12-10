@@ -8,16 +8,42 @@
   User.destroy_all
 #
  u1 = User.create!(
-   email:     'lucy@lucyw.com',
-   password:  'chicken',
-  first_name: 'Lucy',
-  last_name: 'Wirth',
-  address: '1 York St, Sydney, NSW, 2001',
-  clothing_size: '12'
+ email:     'lucy@lucyw.com',
+ password:  'chicken',
+first_name: 'Lucy',
+last_name: 'Wirth',
+address: '1 York St, Sydney, NSW, 2001',
+clothing_size: '12',
+)
+u2 = User.create!(
+email:     'jane@jane.com',
+password:  'chicken',
+first_name: 'Jane',
+last_name: 'Doe',
+address: '161 Sussex St, Sydney, NSW 2001',
+clothing_size: '15'
+)
+u3 = User.create!(
+email:     'john@john.com',
+password:  'chicken',
+first_name: 'John',
+last_name: 'Smith',
+address: '3/ 19 Hunter St, Sydney, NSW 2000',
+clothing_size: '18'
+)
+
+u4 = User.create!(
+email:     'Neil@n.com',
+password:  'chicken',
+first_name: 'Neil',
+last_name: 'West',
+address: '342 Elizabeth St, Sydney, NSW 2000',
+clothing_size: '12'
 )
 
 puts "Done! Created #{ User.count } users."
 Garment.destroy_all
+
 g1 = Garment.create!(
   title:   'Wedding dress',
   garment_type:     'dress',
