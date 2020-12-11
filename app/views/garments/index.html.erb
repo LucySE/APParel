@@ -1,6 +1,10 @@
 <h1>Swap Shop </h1>
 
+            <%= token_tag %>
+
 <ul>
+
+
 <% @garments.each do |garment| %>
   <li>
     <%= link_to garment.title, garment_path(garment.id) %>

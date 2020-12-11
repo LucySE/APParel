@@ -11,10 +11,20 @@ Rails.application.routes.draw do
   # Create all 7 CRUD routes for our User model
   resources :users
 
+def update
+  @user = User.find(params[:id])
+  @user.update(user_params)
+
+  redirect_to user_path(@user)
+
+end
   post '/garments/:id/claim' => 'garments#claim', as: 'claim_garment'
   resources :garments
   resources :photos
 
+   post 'photo/store'
+   root 'photo#index'
+  
 #     users GET    /users(.:format)          users#index
 #           POST   /users(.:format)          users#create
 #  new_user GET    /users/new(.:format)      users#new

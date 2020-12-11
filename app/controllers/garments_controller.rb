@@ -63,6 +63,9 @@ class GarmentsController < ApplicationController
      @garment = Garment.find params[:id]
    end
   #
+  def garment_params
+  params.require(:garment).permit(:title, :body, photos: [])
+end
   # def edit
   # end
   #

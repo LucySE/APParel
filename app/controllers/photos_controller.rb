@@ -43,9 +43,15 @@ class PhotosController < ApplicationController
 
     redirect_to photo_path( photo.id ) # go to show page
   end
+  def store
+          render plain: params[:caption].inspect
+        end
+
 
   def index
+  @posts = Post.all
   end
+end
 
   def show
     @photo = Photo.find params[:id]

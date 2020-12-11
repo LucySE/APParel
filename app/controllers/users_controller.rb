@@ -23,7 +23,14 @@ class UsersController < ApplicationController
       # i.e., the blank form, from this 'create' action
       render :new
     end
-
+    # @current_user = User.new(user_params)
+    #   if @current_user.valid?
+    #      @current_user.save
+    #      redirect_to user_path(@current_user)
+    #   else
+    #      render :new
+    #   end
+    # end
 
 
   end  #create
